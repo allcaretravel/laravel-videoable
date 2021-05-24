@@ -12,6 +12,7 @@
 | <= 5.4  | ^1.0 |
 | 5.5  | ^2.0  |
 | 5.7  | ^3.0  |
+| >= 7 | ^4.0 |
 
 **Laravel Videoable** is a quick and easy way to add a video to your Eloquent Models. It also features a way to generate the embed code directly.
 
@@ -78,7 +79,19 @@ php artisan vendor:publish --provider="Nwidart\LaravelVideoable\LaravelVideoable
 ``` bash
 php artisan vendor:publish --provider="Nwidart\LaravelVideoable\LaravelVideoableServiceProvider" --tag=views
 ```
+## Configuration
 
+You can configure model and table from configuration file `laravel-videoable`
+
+```php
+return [
+   //...
+    'table' => 'videos',
+    'model' => \Nwidart\LaravelVideoable\Models\Video::class
+  //...
+];
+
+```
 
 ## Documentation
 
