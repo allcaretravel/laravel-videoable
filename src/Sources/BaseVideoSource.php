@@ -2,6 +2,7 @@
 
 namespace Nwidart\LaravelVideoable\Sources;
 
+use Illuminate\Support\Arr;
 use Nwidart\LaravelVideoable\Models\Video;
 
 abstract class BaseVideoSource
@@ -13,7 +14,7 @@ abstract class BaseVideoSource
 
     public function __construct(array $vars)
     {
-        $this->entity = new Video(array_get($vars, 'attributes', []));
+        $this->entity = new Video(Arr::get($vars, 'attributes', []));
     }
 
     /**
